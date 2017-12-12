@@ -1,8 +1,11 @@
-    <%= simple_form_for @information do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :salary, label: false, placeholder: "Salary" %>
-      <%= f.input :company, label: false, placeholder: "Company" %>
-      <%= f.input :years_worked, label: false, placeholder: "Years worked" %>
-      <%= f.input :city, label: false, placeholder: "City" %>
-      <%= f.button :submit "SEE REPORT" %>
-    <% end %>
+  <form action="/action_page.php">
+    <select name="fields" form="field_of_work" placeholder="Field" class="dropdown_fields_main">
+      <option selected="selected" class="field_selected">Field of work</option>
+      <option value="web_developer">Web Developer</option>
+      <option value="web_designer">Web Designer</option>
+      <option value="database_engineer">Database Engineer</option>
+      <option value="software_engineer">Software Engineer</option>
+    </select>
+
+    <input type="text" class="form_secondary" name="company" placeholder="Years of experience">
+  </form>
