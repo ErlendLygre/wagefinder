@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212095217) do
+ActiveRecord::Schema.define(version: 20171212101818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.string "name"
+    t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "registrations", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +45,29 @@ ActiveRecord::Schema.define(version: 20171212095217) do
     t.index ["reset_password_token"], name: "index_registrations_on_reset_password_token", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.integer "years_worked"
+    t.integer "years_edu"
+    t.bigint "registration_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["registration_id"], name: "index_users_on_registration_id"
+  end
+
+  create_table "wages", force: :cascade do |t|
+    t.integer "wage"
+    t.bigint "user_id"
+    t.bigint "field_id"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_wages_on_company_id"
+    t.index ["field_id"], name: "index_wages_on_field_id"
+    t.index ["user_id"], name: "index_wages_on_user_id"
+  end
+
+  add_foreign_key "users", "registrations"
+  add_foreign_key "wages", "companies"
+  add_foreign_key "wages", "fields"
+  add_foreign_key "wages", "users"
 end
