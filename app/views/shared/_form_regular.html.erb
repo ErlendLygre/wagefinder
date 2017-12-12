@@ -1,8 +1,8 @@
-    <%= simple_form_for @information do |f| %>
+    <%= simple_form_for @wage do |f| %>
       <%= f.error_notification %>
-      <%= f.input :salary, label: false, placeholder: "Salary" %>
+      <%= f.input :wage, label: false, placeholder: "Salary" %>
       <%= f.input :company, label: false, placeholder: "Company" %>
       <%= f.input :years_worked, label: false, placeholder: "Years worked" %>
-      <%= f.input :city, label: false, placeholder: "City" %>
-      <%= f.button :submit "SEE REPORT" %>
+      <%= f.input :field, label: false, placeholder: "Field" %>
+      <%= f.button :submit %>
     <% end %>
