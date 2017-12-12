@@ -1,5 +1,4 @@
 require 'json'
-require 'open-uri'
 
 class WagesController < ApplicationController
   def index
@@ -7,6 +6,7 @@ class WagesController < ApplicationController
   end
 
   def new
+    @wage = Wage.new
   end
 
   def preview

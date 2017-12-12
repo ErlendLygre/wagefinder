@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_one :registration
+  belongs_to :registration
   has_one :wage
 end
