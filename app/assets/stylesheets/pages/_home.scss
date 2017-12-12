@@ -28,7 +28,7 @@ body {
 
 .dropdown_fields_main {
 
-  width: 100%;
+  width: 90%;
   height: 45px;
   color: #B0A7A7;
   font-size: 23px;
@@ -40,18 +40,20 @@ body {
   border: 1px solid lightgrey;
   box-sizing: border-box;
   padding-left: 10px;
-  background-color: transparent;
+  margin: 20px 5%;
+  background-color: white;
 }
 
 .form_secondary {
 
-  width: 100%;
+  width: 90%;
   height: 45px;
   color: #B0A7A7;
   font-size: 23px;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   padding-left: 10px;
+  margin: 20px 5%;
 }
 
 .field_selected {

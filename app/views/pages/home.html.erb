@@ -1,5 +1,28 @@
-<form action="preview" method="post">
-  <input type="text" name="years_worked" value="Years">
-  <input type="text" name="field" value="Field">
-  <input type="submit">
-</form>
+  <div id="logo">
+    <div class="logo_green">
+      <h3> Wage </h3>
+    </div>
+    <div class="logo_black">
+      <h3 class="finder"> Finder</h3>
+    </div>
+  </div>
+
+
+  <h1 class="discover_text"> Discover</br> your field's</br> average wage</h1>
+
+
+  <form action="/action_page.php">
+    <select name="fields" form="field_of_work" placeholder="Field" class="dropdown_fields_main">
+      <option selected="selected" class="field_selected">Field of work</option>
+      <option value="web_developer">Web Developer</option>
+      <option value="web_designer">Web Designer</option>
+      <option value="database_engineer">Database Engineer</option>
+      <option value="software_engineer">Software Engineer</option>
+    </select>
+
+    <input type="text" class="form_secondary" name="company" placeholder="Years of experience">
+  </form>
+
+  <div>
+      <a href=“#” class="btn">Submit</a>
+  </div>
