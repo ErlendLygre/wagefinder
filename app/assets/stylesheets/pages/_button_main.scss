@@ -1,0 +1,25 @@
+.btn {
+  display: inline-block;
+  background-color: #F3AE12;
+  color: #EEE9E4;
+  font-weight: 700;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 0.2em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  width: 373px;
+  height: 65px;
+  text-align: center;
+  font-size: 25px;
+  vertical-align: middle;
+
+}
+.btn:hover, .btn:focus {
+  background-color: #E2A210;
+  color: #EEE9E4;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
