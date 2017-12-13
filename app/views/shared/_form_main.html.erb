@@ -1,11 +1,17 @@
-  <form action="/action_page.php">
-    <select name="fields" form="field_of_work" placeholder="Field" class="dropdown_fields_main">
-      <option selected="selected" class="field_selected">Field of work</option>
-      <option value="web_developer">Web Developer</option>
-      <option value="web_designer">Web Designer</option>
-      <option value="database_engineer">Database Engineer</option>
-      <option value="software_engineer">Software Engineer</option>
-    </select>
+<form action="/wages" method="post">
+  <select name="fields" form="field_of_work" placeholder="Field" class="dropdown_fields_main">
+    <option selected="selected" class="field_selected">Field of work</option>
+    <option value="IT Leader">IT Leader</option>
+    <option value="System Architect">System Architect</option>
+    <option value="Cyber Security Engineer">Cyber Security Engineer</option>
+    <option value="Software Developer">Software Developer</option>
+    <option value="Web Developer">Web Developer</option>
+    <option value="Data Scientist">Data Scientist</option>
+    <option value="System Administrator">System Administrator</option>
+    <option value="Hardware Technician">Hardware Technician</option>
+    <option value="Tech Support">Tech Support</option>
+  </select>
 
-    <input type="text" class="form_secondary" name="company" placeholder="Years of experience">
-  </form>
+  <input type="text" class="form_secondary" name="company" placeholder="Years of experience">
+  <input type="submit">
+</form>

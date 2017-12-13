@@ -2,7 +2,6 @@ require 'json'
 
 class WagesController < ApplicationController
   def index
-
   end
 
   def new

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  def show
+  def index
+    @user = current_user.registration.email
+    @wage = Wage.all
+  end
 
+  def show
   end
 
   def create

@@ -8,7 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    # edit_registration_registration_path(resource.user)
     new_wage_path
   end
 end
