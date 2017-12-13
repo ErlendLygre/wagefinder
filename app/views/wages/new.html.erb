@@ -2,7 +2,7 @@
 <div class="form-wrapper">
   <div class="navbar">
     <%= render 'shared/logo' %>
-    <button class="logout"> Logout </button>
+    <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
   </div>
     <h3> Help us refine</br> your results </h3>
   <div class="form-minus-button">
