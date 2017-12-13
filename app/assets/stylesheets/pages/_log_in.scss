@@ -38,3 +38,8 @@ a:hover {
   box-shadow: none;
   border: 1px solid lightgrey;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
