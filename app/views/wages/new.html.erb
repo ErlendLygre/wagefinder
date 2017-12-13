@@ -1,6 +1,9 @@
 
 <div class="form-wrapper">
-  <%= render 'shared/logo' %>
+  <div class="navbar">
+    <%= render 'shared/logo' %>
+    <button class="logout"> Logout </button>
+  </div>
     <h3> Help us refine</br> your results </h3>
   <div class="form-minus-button">
   <%= simple_form_for @wage do |f| %>
