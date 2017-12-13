@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :registrations
+  devise_for :registrations, :controllers => {registrations: "registrations"}
   resources :wages, only: [ :create, :new ]
   post 'preview', to: 'wages#preview'
   resources :users, only: [ :index, :create ]
