@@ -1,3 +1,15 @@
-<h1>Wage preview</h1>
-<p><%= @result %></p>
-<%= button_to "Get full report", new_registration_session_path, method: :get %>
+<div class="preview-wrapper">
+
+  <%= render 'shared/logo' %>
+
+  <div class="preview-less-button">
+  <h1 class="amount-money"> $ 75,000 </h1>
+
+  <h1 class="job-title-years"> for 19 years as</br> a Ux designer</h1>
+
+
+   <%= image_tag("bills_phone.png")%>
+
+  </div>
+  <%= button_to "Get free report", new_registration_session_path, method: :get %>
+</div>

@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     redirect_to new_wage_path if user_signed_in?
     @field = Field.all
   end
+  def test
+    render 'wages/preview'
+  end
 end
