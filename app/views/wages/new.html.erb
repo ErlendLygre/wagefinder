@@ -1,3 +1,15 @@
-<h1>Wages#new</h1>
-<p>Find me in app/views/wages/new.html.erb</p>
-<%= render 'shared/form_regular' %>
+
+<div class="form-wrapper">
+  <%= render 'shared/logo' %>
+    <h3> Help us refine</br> your results </h3>
+  <div class="form-minus-button">
+  <%= simple_form_for @wage do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :wage, label: false, placeholder: "Salary" %>
+    <%= f.input :company, label: false, placeholder: "Company" %>
+    <%= f.input :years_worked, label: false, placeholder: "Years worked" %>
+    <%= f.input :field, label: false, placeholder: "Field" %>
+  </div>
+    <%= f.button :submit %>
+  <% end %>
+</div>

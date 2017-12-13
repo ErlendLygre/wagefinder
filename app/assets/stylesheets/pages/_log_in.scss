@@ -16,6 +16,7 @@ h2 {
   padding-left: 10px;
   margin: 20px 15%;
   font-family: 'Montserrat', sans-serif;
+
 }
 
 .form-wrapper {
@@ -34,4 +35,6 @@ a:hover {
 .form-control {
 
   text-align: center;
+  box-shadow: none;
+  border: 1px solid lightgrey;
 }
