@@ -1,0 +1,11 @@
+get '/pages' 'pages#home'
+
+post 'preview', to: 'preview' as:'preview'
+
+post 'users/create', to: 'user#create'
+
+get 'wages/new', to: 'wages#new'
+
+post 'wages/create', to: 'wages#create'
+
+get 'users/index', 'users#index' as: 'report'
