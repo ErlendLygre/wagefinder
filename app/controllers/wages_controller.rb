@@ -1,6 +1,8 @@
 require 'json'
 
 class WagesController < ApplicationController
+  skip_before_action :authenticate_registration!, only: :preview
+
   def index
   end
 
@@ -23,7 +25,7 @@ class WagesController < ApplicationController
   end
 
   def preview
-    url = Field.where(name: params["field"])[0].file
+    url = Field.where(name: params["field"]["name"])[0].json
     file_content = File.read(Rails.root.to_s + "/app/controllers/" + url)
     data = JSON.parse(file_content)
     @result = data["result"][params["years_worked"]]

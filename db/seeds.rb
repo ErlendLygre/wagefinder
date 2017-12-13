@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Field.destroy_all
+
 Field.create(name: "IT Leader")
 Field.create(name: "System Architect")
 Field.create(name: "Cyber Security Engineer")
