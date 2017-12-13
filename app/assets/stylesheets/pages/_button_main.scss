@@ -25,3 +25,32 @@
   color: #EEE9E4;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
 }
+
+input[type=submit] {
+    display: inline-block;
+  background-color: #ffb100;
+  color: #EEE9E4;
+  font-weight: 700;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 0.2em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 25px;
+  vertical-align: middle;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #E2A210;
+  color: #EEE9E4;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+
+}
