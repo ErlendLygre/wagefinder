@@ -25,12 +25,13 @@ class WagesController < ApplicationController
   end
 
   def preview
-    # @result = data["result"][params["years_worked"]]
-    # @field = params["field"]
-    # @years = params["years_worked"]
-
-    #     calc = CalculatorService.new({wage: 100, years: 10})
-    # calc.calculate_wage
+    field_avg_wage = Field.where(name: params["field"]["name"])[0].avg_wage
+    calc = CalculatorService.new({ wage: field_avg_wage,
+                                   years: 17,
+                                   years_new: params["years"] })
+    @result = calc.new_wage.to_i
+    @field = params["field"]["name"]
+    @years = params["years"]
   end
 
   private
