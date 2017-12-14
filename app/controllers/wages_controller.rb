@@ -25,12 +25,12 @@ class WagesController < ApplicationController
   end
 
   def preview
-    url = Field.where(name: params["field"]["name"])[0].json
-    file_content = File.read(Rails.root.to_s + "/app/controllers/" + url)
-    data = JSON.parse(file_content)
-    @result = data["result"][params["years_worked"]]
-    @field = params["field"]
-    @years = params["years_worked"]
+    # @result = data["result"][params["years_worked"]]
+    # @field = params["field"]
+    # @years = params["years_worked"]
+
+    #     calc = CalculatorService.new({wage: 100, years: 10})
+    # calc.calculate_wage
   end
 
   private
