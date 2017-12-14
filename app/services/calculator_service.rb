@@ -2,7 +2,7 @@ class CalculatorService
   def initialize(args={})
     @wage = args[:wage].to_f
     @years = args[:years]
-    @years_new = args[:years_new]
+    @years_new = args[:years_new].to_i
   end
 
   def starting_wage
