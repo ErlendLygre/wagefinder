@@ -8,11 +8,13 @@ class WagesController < ApplicationController
 
   def new
     @wage = Wage.new
+    @fields = Field.all
+    redirect_to users_path if current_user.wage
   end
 
   def create
     @wage = Wage.new
-    @wage.field = Field.find_by_name(wages_params[:field])
+    @wage.field = Field.find(wages_params[:field_id])
     @wage.company = Company.find_by_name(wages_params[:company])
     @wage.years_worked = wages_params[:years_worked].to_i
     @wage.wage = wages_params[:wage].to_i
@@ -37,6 +39,6 @@ class WagesController < ApplicationController
   private
 
   def wages_params
-    params.require(:wage).permit(:wage, :field, :company, :years_worked)
+    params.require(:wage).permit(:wage, :field_id, :company, :years_worked)
   end
 end
