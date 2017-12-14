@@ -1,4 +1,15 @@
+<div class="index-wrapper">
+  <%= render 'shared/logo' %>
 
-<h1>Welcome, <%= @user %></h1>
+  <div class="index-less-button">
+    <h6 class="user_field"><%=  current_user.wage.field.name %> </h6>
 
-<p> Details for <%=  @wage.first.field.name %> </p>
+    <%= image_tag("infographic.png")%>
+
+
+    <h6> 1yr $37,000</h6>
+    <h6> 5yr $45,000</h6>
+    <h6> 10yr $65,000 </h6>
+  </div>
+  <%= button_to "Browse companies" %>
+</div>
