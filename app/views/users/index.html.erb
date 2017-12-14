@@ -1,15 +1,12 @@
 <div class="index-wrapper">
   <%= render 'shared/logo' %>
-
+  <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
   <div class="index-less-button">
     <h6 class="user_field"><%=  current_user.wage.field.name %> </h6>
-
     <%= image_tag("infographic.png")%>
-
-
-    <h6> 1yr $37,000</h6>
-    <h6> 5yr $45,000</h6>
-    <h6> 10yr $65,000 </h6>
+    <h6> Your wage now $ <%= current_user.wage.wage %></h6>
+    <h6> In 5 years $ <%= @yr_5 %></h6>
+    <h6> In 10 years $ <%= @yr_10 %> </h6>
   </div>
   <button id="browse" class="btn">
     Browse Companies
