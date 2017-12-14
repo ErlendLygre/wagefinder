@@ -3,9 +3,9 @@
   <%= render 'shared/logo' %>
 
   <div class="preview-less-button">
-  <h1 class="amount-money"> $ 75,000 </h1>
+  <h1 class="amount-money"> $  TO BE DETERMINED </h1>
 
-  <h1 class="job-title-years"> for 19 years as</br> a Ux designer</h1>
+  <h1 class="job-title-years"> for <%= params["years"] %> years as</br> a <%= @field["name"] %></h1>
 
 
    <%= image_tag("bills_phone.png")%>

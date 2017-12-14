@@ -18,4 +18,3 @@ Field.create(name: "System Administrator")
 Field.create(name: "Hardware Technician")
 Field.create(name: "Tech Support")
 
-
