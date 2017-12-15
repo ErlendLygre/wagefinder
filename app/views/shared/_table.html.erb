@@ -1,20 +1,17 @@
 <table class="info_table" border="1" cellpadding="8" cellspacing="0" bordercolor="#dddddd">
   <tbody>
-    <tr>
-      <td>Apple</td>
-      <td>$58,000</td>
-    </tr>
-    <tr>
-      <td>Pear</td>
-      <td>$75,000</td>
-    </tr>
-    <tr>
-      <td>Grape</td>
-      <td>$98,000</td>
-    </tr>
-    <tr>
-      <td>Orange</td>
-      <td>$48,000</td>
-    </tr>
+    <% count = 0 %>
+    <% bundle_count = 1 %>
+    <% @companies.each do |company| %>
+      <tr class="<%= bundle_count  %> pagination-hidden company-wage-info">
+        <td><%= company.name %></td>
+        <td>$58,000</td>
+      </tr>
+      <% count += 1 %>
+      <% if count == 6 %>
+        <% bundle_count += 1 %>
+        <% count = 0 %>
+      <% end %>
+    <% end %>
   </tbody>
 </table>
