@@ -7,6 +7,9 @@
     <h6> Your wage now $ <%= current_user.wage.wage %></h6>
     <h6> In 5 years $ <%= @yr_5 %></h6>
     <h6> In 10 years $ <%= @yr_10 %> </h6>
+    <h2> $<%= @company_avg %> </h2>
+    <h6> <%= current_user.wage.company.name %> average wage
+    <br> for <%= current_user.wage.field.name %> </h6>
   </div>
   <button id="browse" class="btn">
     Browse Companies
