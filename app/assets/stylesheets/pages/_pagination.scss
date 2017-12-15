@@ -1,5 +1,8 @@
 .pagination {
-    display: inline-block;
+  display: inline-block;
+  padding-left: 0;
+  margin: 10px 38%;
+  border-radius: 2px;
 }
 
 .pagination a {
@@ -15,3 +18,8 @@
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination-hidden {
+  display:none;
+}
+

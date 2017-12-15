@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @companies = Company.all
     @user = current_user.registration.email
     @wage = Wage.all
     @yr_5 = CalculatorService.new({wage: current_user.wage.wage,
