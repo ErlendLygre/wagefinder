@@ -15,7 +15,7 @@ class CalculatorService
 end
 
 # p CalculatorService.new({wage: 600000, years: 10, years_new: 30}).starting_wage.round
-# p CalculatorService.new({wage: 600000, years: 10, years_new: 30}).new_wage.round
+# p CalculatorService.new({wage: 60000, years: 5, years_new: 10}).new_wage.round
 
 # p CalculatorService.new({wage: 75000, years: 17, years_new: 10}).starting_wage.round
 # p CalculatorService.new({wage: 75000, years: 17, years_new: 30}).new_wage.round

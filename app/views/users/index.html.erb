@@ -1,5 +1,6 @@
 <div class="index-wrapper">
   <%= render 'shared/logo' %>
+  <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
   <div class="index-less-button">
     <h6 class="user_field">Wage progression for<br> <%=  current_user.wage.field.name %>s </h6>
     <%= image_tag("infographic.png")%>

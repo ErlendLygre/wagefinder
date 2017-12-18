@@ -5,19 +5,19 @@ class UsersController < ApplicationController
     @wage = Wage.all
     @yr_5 = CalculatorService.new({wage: current_user.wage.wage,
                                    years: current_user.wage.years_worked,
-                                   years_new: current_user.wage.years_worked + 5 }).new_wage.to_i
+                                   years_new: current_user.wage.years_worked + 5 })
+                                   .new_wage.to_i + inflation(5)
+
     @yr_10 = CalculatorService.new({wage: current_user.wage.wage,
                                    years: current_user.wage.years_worked,
-                                   years_new: current_user.wage.years_worked + 10 }).new_wage.to_i
-    @company_avg = company_avg(current_user.wage.field)
+                                   years_new: current_user.wage.years_worked + 10 })
+                                   .new_wage.to_i + inflation(10)
+
+    @company_avg = CompanyAverageService.new(current_user.wage.field, current_user.wage.company).company_avg
   end
 
-  def company_avg(field, company = current_user.wage.company)
-    company_wages = Wage.where(company: company)
-    company_wage_by_field = company_wages.select{ |wage| wage.field == field }
-    company_wage_by_field.map!(&:wage)
-    company_total = company_wage_by_field.inject(0){|sum,x| sum + x }
-    return company_total / company_wage_by_field.size
+  def inflation (years)
+    ((current_user.wage.wage * 1.024**years) - current_user.wage.wage).to_i
   end
 
   def show
