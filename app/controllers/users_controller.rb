@@ -14,6 +14,7 @@ class UsersController < ApplicationController
                                    .new_wage.to_i + inflation(10)
 
     @company_avg = CompanyAverageService.new(current_user.wage.field, current_user.wage.company).company_avg
+    @user_field = current_user.wage.field
   end
 
   def inflation (years)

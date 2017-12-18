@@ -5,7 +5,7 @@
     <% @companies.each do |company| %>
       <tr class="<%= bundle_count  %> pagination-hidden company-wage-info">
         <td><%= company.name %></td>
-        <td>$58,000</td>
+        <td><strong><%= number_with_delimiter(company.field_average(@user_field)) %>€<strong></td>
       </tr>
       <% count += 1 %>
       <% if count == 6 %>
