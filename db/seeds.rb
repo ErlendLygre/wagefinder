@@ -5,12 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
 
 p "Clearing database..."
 Field.destroy_all
 Company.destroy_all
 User.destroy_all
 Registration.destroy_all
+
 
 p "Database clear, adding fields.."
 Field.create(name: "IT Leader", avg_wage: 85200)
@@ -48,4 +51,29 @@ Company.create(name: "Netflix")
 Company.create(name: "Xiaomi")
 Company.create(name: "Facebook")
 Company.create(name: "Statoil")
+
+p 'Companies added, adding registrations (this may take a while)'
+1000.times do
+  Registration.create(email: Faker::Internet.email,
+                      password: '123456',
+                      password_confirmation: '123456')
+end
+
+p 'Creating users'
+Registration.all.each do |registration|
+  User.create(registration: registration)
+end
+
+p 'Creating wages'
+User.all.each do |user|
+   Wage.create(company: Company.all.sample,
+              field: Field.all.sample,
+              user: user,
+              wage: (30000...150000).to_a.sample,
+              years_worked: (1...45).to_a.sample)
+end
+
 p "...Done"
+
+
+
