@@ -2,7 +2,8 @@
   <%= render 'shared/logo' %>
   <%= render 'shared/tabs' %>
 
-  <div class="index-less-button">
+
+
   <% if @how_you_are_doing == 'doing well' %>
     <h2 class="doing_well"><%= @how_you_are_doing %></h2>
   <% else %>
@@ -12,7 +13,7 @@
     <h6>Average for your field is <br><strong><%= number_with_delimiter(@should_be_making) %>€</strong></h6>
     <%= image_tag("infographic.png")%>
     <h6 class="user_field">Your expected wage progression </h6>
-  </div>
+
 </div>
 
 
