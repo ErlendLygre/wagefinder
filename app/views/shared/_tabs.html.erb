@@ -1,0 +1,15 @@
+<div class="tabs">
+  <% if @current_page == 'companies' %>
+    <%= link_to 'Your salary', users_path, class: 'tab' %>
+    <%= link_to 'Compare fields', fields_path, class: 'tab' %>
+    <%= link_to 'Browse companies', companies_path, class: 'tab active' %>
+  <% elsif @current_page == 'fields'%>
+    <%= link_to 'Your salary', users_path, class: 'tab' %>
+    <%= link_to 'Compare fields', fields_path, class: 'tab active' %>
+    <%= link_to 'Browse companies', companies_path, class: 'tab' %>
+  <% else %>
+    <%= link_to 'Your salary', users_path, class: 'tab active' %>
+    <%= link_to 'Compare fields', fields_path, class: 'tab' %>
+    <%= link_to 'Browse companies', companies_path, class: 'tab' %>
+  <% end %>
+</div>

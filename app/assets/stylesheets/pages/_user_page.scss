@@ -1,5 +1,4 @@
 .user_field  {
-
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -9,17 +8,13 @@
   font-style: italic;
 }
 
-
 .index-wrapper {
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
 }
 
 .company_header {
-
   font-size: 20px;
   display: inline-block;
   margin: 10px 10%;
@@ -28,8 +23,19 @@
 }
 
 .average_wage {
-
   font-size: 20px;
   display: inline-block;
   margin-left: 10px;
+}
+
+.doing_well {
+  color: #07C372;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+.ask_more {
+  color: #ffb100;
+  font-variant: small-caps;
+  font-weight: bold;
 }
