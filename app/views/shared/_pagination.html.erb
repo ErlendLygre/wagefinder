@@ -1,6 +1,6 @@
 
 <div class="pagination">
- <% num = @companies.length.to_f/6 %>
+ <% num = @company_data.length.to_f/6 %>
  <% num.ceil.times do |i| %>
    <button class="btn-pagination" onClick="clickHandler(event)"><%= i + 1 %></button>
  <% end %>

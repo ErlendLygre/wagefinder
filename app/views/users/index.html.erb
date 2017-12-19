@@ -1,30 +1,28 @@
 <div class="index-wrapper">
   <%= render 'shared/logo' %>
-  <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
+  <%= render 'shared/tabs' %>
+
   <div class="index-less-button">
-    <h6 class="user_field">Wage progression for<br> <%=  current_user.wage.field.name %>s </h6>
+  <% if @how_you_are_doing == 'doing well' %>
+    <h2 class="doing_well"><%= @how_you_are_doing %></h2>
+  <% else %>
+    <h2 class="ask_more"><%= @how_you_are_doing %></h2>
+  <% end %>
+    <h6>You are making: <br><strong><%= number_with_delimiter(current_user.wage.wage) %>€</strong></h6>
+    <h6>Average for your field is <br><strong><%= number_with_delimiter(@should_be_making) %>€</strong></h6>
     <%= image_tag("infographic.png")%>
+    <h6 class="user_field">Your expected wage progression </h6>
+  </div>
+</div>
+
+
+<%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
+
+<!--   <button id="browse" class="btn">
+    Browse Companies
+  </button> -->
+
+
     <h6> Your wage now <strong>$<%= current_user.wage.wage %></strong></h6>
     <h6> In 5 years <strong>$<%= @yr_5 %></strong></h6>
     <h6> In 10 years <strong>$<%= @yr_10 %></strong> </h6>
-
-  </div>
-  <button id="browse" class="btn">
-    Browse Companies
-  </button>
-</div>
-
-<h2> $<%= @company_avg %> </h2>
-<h6> Is the average wage<br>
-     for <%= current_user.wage.field.name %>s <br>
-     at <%= current_user.wage.company.name %>  </h6><br>
-
-<!-- <h6 class="company_header">
-  Company
-</h6>
-<h6 class="average_wage">
-  Average wage
-</h6> -->
-<%= render 'shared/table' %>
-<%= render 'shared/pagination' %>
-
