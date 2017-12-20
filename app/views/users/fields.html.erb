@@ -2,10 +2,6 @@
   <%= render 'shared/logo' %>
   <%= render 'shared/tabs' %>
 
-  <!-- <div class="chart-container"> -->
-    <%= render 'shared/charts' %>
-  <!-- </div> -->
+  <%= render 'shared/charts' %>
+  <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
 </div>
-
-
-<%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
