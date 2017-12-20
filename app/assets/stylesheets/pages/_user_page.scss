@@ -32,10 +32,50 @@
   color: #07C372;
   font-variant: small-caps;
   font-weight: bold;
+  font-family: 'Avenir Next', sans-serif;
 }
 
 .ask_more {
   color: #ffb100;
   font-variant: small-caps;
   font-weight: bold;
+  font-family: 'Avenir Next', sans-serif;
 }
+
+#badges-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#your-wage {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #07C372;
+}
+
+#field-wage {
+  margin: 20px 0 20px 0;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid #ffb100;
+}
+
+#field-wage h6 {
+  position: absolute;
+  top: 62px;
+  left: 27px;
+}
+#your-wage h6 {
+  color: #f4f4f4;
+  position: absolute;
+  top: 58px;
+  left: 34px;
+}
+
