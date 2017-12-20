@@ -8,16 +8,12 @@ class UsersController < ApplicationController
                                    years: 17,
                                    years_new: current_user.wage.years_worked })
     @should_be_making = calc.new_wage.to_i
-
-    @yr_5 = CalculatorService.new({wage: current_user.wage.wage,
-                                   years: current_user.wage.years_worked,
-                                   years_new: current_user.wage.years_worked + 5 })
-                                   .new_wage.to_i + inflation(5)
-
-    @yr_10 = CalculatorService.new({wage: current_user.wage.wage,
-                                   years: current_user.wage.years_worked,
-                                   years_new: current_user.wage.years_worked + 10 })
-                                   .new_wage.to_i + inflation(10)
+    @yr_1 = wage_progression(1)
+    @yr_2 = wage_progression(2)
+    @yr_3 = wage_progression(3)
+    @yr_4 = wage_progression(4)
+    @yr_5 = wage_progression(5)
+    @yr_10 = wage_progression(10)
     @user_field = current_user.wage.field
 
     if @should_be_making < current_user.wage.wage
@@ -25,6 +21,13 @@ class UsersController < ApplicationController
     else
       @how_you_are_doing = "ask for more"
     end
+  end
+
+  def wage_progression(years)
+    CalculatorService.new({wage: current_user.wage.wage,
+                           years: current_user.wage.years_worked,
+                           years_new: current_user.wage.years_worked + years })
+                           .new_wage.to_i + inflation(years)
   end
 
   def inflation (years)

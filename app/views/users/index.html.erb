@@ -4,14 +4,22 @@
 
   <% if @how_you_are_doing == 'doing well' %>
     <h2 class="doing_well"><%= @how_you_are_doing %></h2>
+    <div id="badges-wrapper">
+      <div id="your-wage">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <h6>Your salary: <br><strong><%= number_with_delimiter(current_user.wage.wage) %>€</strong></h6>
+      </div>
+
   <% else %>
     <h2 class="ask_more"><%= @how_you_are_doing %></h2>
+    <div id="badges-wrapper">
+      <div id="your-wage-bad">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <h6>Your salary: <br><strong><%= number_with_delimiter(current_user.wage.wage) %>€</strong></h6>
+      </div>
   <% end %>
-  <div id="badges-wrapper">
-    <div id="your-wage">
-      <i class="fa fa-user" aria-hidden="true"></i>
-      <h6>Your salary: <br><strong><%= number_with_delimiter(current_user.wage.wage) %>€</strong></h6>
-    </div>
+
+
     <div id="field-wage">
       <i class="fa fa-users" aria-hidden="true"></i>
       <h6>Field average: <br><strong><%= number_with_delimiter(@should_be_making) %>€</strong></h6>
@@ -33,23 +41,27 @@
   </div>
   <div class="wage-row-wrapper">
     <div class="year-circle">1</div>
-    <div class="projected-wage">45,312€</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_1)%>€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">2</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_2)%>€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">3</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_3)%>€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">4</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_4)%>€</div>
   </div>
    <div class="wage-row-wrapper">
     <div class="year-circle">5</div>
-    <div class="projected-wage">45,312€</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_5)%>€</div>
   </div>
-   <div class="wage-row-wrapper">
+  <div class="wage-row-wrapper">
     <div class="year-circle">10</div>
-    <div class="projected-wage">45,312€</div>
-  </div>
-   <div class="wage-row-wrapper">
-    <div class="year-circle">15</div>
-    <div class="projected-wage">45,312€</div>
-  </div>
-   <div class="wage-row-wrapper">
-    <div class="year-circle">20</div>
-    <div class="projected-wage">45,312€</div>
+    <div class="projected-wage"><%= number_with_delimiter(@yr_10)%>€</div>
   </div>
 </div>
 
