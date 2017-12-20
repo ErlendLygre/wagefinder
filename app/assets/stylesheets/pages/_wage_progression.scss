@@ -11,6 +11,14 @@
   justify-content: space-around;
 }
 
+.wage-row-wrapper-header {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 20px 0px 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .year-circle {
   display: flex;
   flex-direction: column;
@@ -23,7 +31,6 @@
   color: #FFF;
   margin-right: 35px;
   font-family: 'Montserrat', sans-serif;
-
 
 }
 
@@ -44,4 +51,5 @@
 
   font-weight: 600;
   font-size: 24px;
+  margin-right: -25px;
 }
