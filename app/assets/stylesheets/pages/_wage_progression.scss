@@ -1,0 +1,22 @@
+#wage-progression-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wage-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
+}
+
+.year-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #ffb100;
+  border-radius: 50%;
+}
+
+.projected-wage {
+
+}
