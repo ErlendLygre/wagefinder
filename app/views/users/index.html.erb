@@ -3,7 +3,12 @@
   <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
   <div class="index-less-button">
     <h6 class="user_field">Wage progression for<br> <%=  current_user.wage.field.name %>s </h6>
-    <%= image_tag("infographic.png")%>
+    <!-- <#%= image_tag("infographic.png")%> -->
+    <!-- <#%= bar_chart @fields.group(:name).count %> -->
+    <!-- <#%= high_chart_globals(@chart_globals) %> -->
+    <!-- <#%= high_chart("some_id", @chart) %> -->
+    <canvas id="myChart"></canvas>
+
     <h6> Your wage now <strong>$<%= current_user.wage.wage %></strong></h6>
     <h6> In 5 years <strong>$<%= @yr_5 %></strong></h6>
     <h6> In 10 years <strong>$<%= @yr_10 %></strong> </h6>
@@ -28,3 +33,35 @@
 <%= render 'shared/table' %>
 <%= render 'shared/pagination' %>
 
+<script type="text/javascript">
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+
+    // The data for our dataset
+    data: {
+        labels: <%= raw @field_name.to_json %>,
+        datasets: [{
+            label: null,
+            backgroundColor: ['#ffe0ae', '#ffb100','#ffe0ae', '#ffb100','#ffe0ae', '#ffb100','#ffe0ae', '#ffb100', '#ffe0ae'],
+            // borderColor: 'rgb(255, 99, 132)',
+            data: <%= raw @field_avg_wage.to_json %>,
+        }]
+    },
+    // Configuration options go here
+    options: {
+      scales: {
+        yAxis: [{
+          stacked: true
+        }],
+        xAxis: [{
+          barThickness: .2
+        }]
+      },
+      borderSkip: 'bottom'
+    }
+});
+
+</script>

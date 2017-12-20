@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # include ChartsHelper
   def index
     @companies = Company.all
     @user = current_user.registration.email
@@ -15,6 +16,15 @@ class UsersController < ApplicationController
 
     @company_avg = CompanyAverageService.new(current_user.wage.field, current_user.wage.company).company_avg
     @user_field = current_user.wage.field
+    @fields = Field.all
+
+    @field_name = []
+    @field_avg_wage = []
+
+    @fields. each do |field|
+      @field_name << field.name
+      @field_avg_wage << field.avg_wage
+    end
   end
 
   def inflation (years)
