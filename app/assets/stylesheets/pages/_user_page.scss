@@ -61,6 +61,21 @@
   background-color: #07C372;
 }
 
+#your-wage-bad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #ffb100;
+}
+
+#your-wage h6, #your-wage-bad h6 {
+  color: #f4f4f4;
+}
+
 #field-wage {
   display: flex;
   flex-direction: column;
@@ -73,14 +88,9 @@
   border: 1px solid #979797;
 }
 
-#your-wage h6 {
-  color: #f4f4f4;
-}
-
 .company-average-header {
   padding-top: 20px;
 }
-
 
 .fa-user {
 
