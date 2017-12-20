@@ -33,6 +33,14 @@ class UsersController < ApplicationController
 
   def fields
     @current_page = 'fields'
+    @fields = Field.all
+
+    @field_name = []
+    @field_avg_wage = []
+    @fields.each do |field|
+      @field_name << field.name
+      @field_avg_wage << field.avg_wage
+    end
   end
 
   def companies
