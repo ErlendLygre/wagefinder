@@ -9,14 +9,16 @@
   <% end %>
   <div id="badges-wrapper">
     <div id="your-wage">
+      <i class="fa fa-user" aria-hidden="true"></i>
       <h6>Your salary: <br><strong><%= number_with_delimiter(current_user.wage.wage) %>€</strong></h6>
     </div>
     <div id="field-wage">
+      <i class="fa fa-users" aria-hidden="true"></i>
       <h6>Field average: <br><strong><%= number_with_delimiter(@should_be_making) %>€</strong></h6>
     </div>
   </div>
     <button id="browse" class="btn">
-    Wage Progression
+    Projected Wage
   </button>
 </div>
 
@@ -26,17 +28,30 @@
 
 <div id="wage-progression-wrapper">
   <div class="wage-row-wrapper">
+    <h6 class="years-header"> Years </h6>
+    <h6 class="projected-years-header"> Projected salary </h6>
+  </div>
+  <div class="wage-row-wrapper">
     <div class="year-circle">1</div>
     <div class="projected-wage">45,312€</div>
   </div>
    <div class="wage-row-wrapper">
-    <div class="year-circle">1</div>
+    <div class="year-circle">5</div>
+    <div class="projected-wage">45,312€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">10</div>
+    <div class="projected-wage">45,312€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">15</div>
+    <div class="projected-wage">45,312€</div>
+  </div>
+   <div class="wage-row-wrapper">
+    <div class="year-circle">20</div>
     <div class="projected-wage">45,312€</div>
   </div>
 </div>
 
-    <h6> Your wage now <strong>$<%= current_user.wage.wage %></strong></h6>
-    <h6> In 5 years <strong>$<%= @yr_5 %></strong></h6>
-    <h6> In 10 years <strong>$<%= @yr_10 %></strong> </h6>
   <%= button_to 'Logout', destroy_registration_session_path, method: :delete %>
 
