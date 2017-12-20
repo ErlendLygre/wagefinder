@@ -1,0 +1,54 @@
+<div class="chart-container">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script type="text/javascript">
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+
+    // The data for our dataset
+    data: {
+        labels: <%= raw @field_name.to_json %>,
+        datasets: [{
+            label: null,
+            backgroundColor: ['#ffe0ae', '#ffb100','#ffe0ae', '#ffb100','#ffe0ae', '#ffb100','#ffe0ae', '#ffb100', '#ffe0ae'],
+            // borderColor: 'rgb(255, 99, 132)',
+            data: <%= raw @field_avg_wage.to_json %>,
+        }]
+    },
+    // Configuration options go here
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 20
+        }
+      },
+      legend: {
+        display: false
+      },
+    scales: {
+    yAxes: [{
+        barThickness : 23,
+        ticks: {
+          fontSize: 15,
+          fontStyle: 'bold'
+        },
+        gridLines: {
+          display:false
+        }
+      }],
+    xAxes: [{
+        ticks: {
+          fontSize: 15,
+          fontStyle: 'bold'
+        },
+    }],
+    }
+  }
+});
+</script>

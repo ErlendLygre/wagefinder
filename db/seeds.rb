@@ -18,12 +18,12 @@ Registration.destroy_all
 p "Database clear, adding fields.."
 Field.create(name: "IT Leader", avg_wage: 85200)
 Field.create(name: "System Architect", avg_wage: 69600)
-Field.create(name: "Cyber Security Engineer", avg_wage: 68400)
+Field.create(name: "Security Engineer", avg_wage: 68400)
 Field.create(name: "Software Developer", avg_wage: 66240)
 Field.create(name: "Web Developer", avg_wage: 66120)
 Field.create(name: "Data Scientist", avg_wage: 64680)
-Field.create(name: "System Administrator", avg_wage: 61800)
-Field.create(name: "Hardware Technician", avg_wage: 61080)
+Field.create(name: "Sysadmin", avg_wage: 61800)
+Field.create(name: "Technician", avg_wage: 61080)
 Field.create(name: "Tech Support", avg_wage: 49080)
 
 p "Fields added, adding companies..."
