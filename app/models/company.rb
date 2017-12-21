@@ -10,9 +10,9 @@ class Company < ApplicationRecord
     return sum / wages.size
   end
 
-  include AlgoliaSearch
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attribute :name
-  end
+  # algoliasearch do
+  #   attribute :name
+  # end
 end
