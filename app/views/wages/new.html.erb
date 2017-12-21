@@ -7,7 +7,7 @@
   <%= simple_form_for @wage do |f| %>
     <%= f.error_notification %>
     <%= f.input :wage, label: false, placeholder: "Yearly salary (€)" %>
-    <%= f.input :company, label: false, placeholder: "Company" %>
+    <%= f.input :company, label: false, placeholder: "Company", input_html: { id: "aa-search-input", autocomplete: "off" } %>
     <%= f.input :years_worked, label: false, placeholder: "Years worked" %>
     <%= f.input :field_id, collection: @fields, label: false, selected: "Pick a field" %>
   </div>
