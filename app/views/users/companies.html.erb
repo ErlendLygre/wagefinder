@@ -2,7 +2,7 @@
   <%= render 'shared/logo' %>
   <%= render 'shared/tabs' %>
   <div class="index-less-button">
-<h2 class="company-average-header"> $<%= @company_avg %> </h2>
+<h2 class="company-average-header"> <%= number_with_delimiter(@company_avg ) %>€ </h2>
 <h6> Is the average wage<br>
      for <%= current_user.wage.field.name %>s <br>
      at <%= current_user.wage.company.name %>  </h6><br>

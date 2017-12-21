@@ -1,7 +1,7 @@
 <div class="preview-wrapper">
   <%= render 'shared/logo' %>
   <div class="preview-less-button">
-  <h1 class="amount-money"> <%= @result %>€ </h1>
+  <h1 class="amount-money"><%= number_with_delimiter(@result ) %>€</h1>
   <h1 class="job-title-years"> for <%= @years %> years as</br> a <%= @field %></h1>
    <%= image_tag("bills_phone.png")%>
   </div>
