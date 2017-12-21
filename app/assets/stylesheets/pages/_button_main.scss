@@ -27,7 +27,7 @@
 }
 
 input[type=submit] {
-    display: inline-block;
+  display: inline-block;
   background-color: #ffb100;
   color: #EEE9E4;
   font-weight: 700;
@@ -46,6 +46,7 @@ input[type=submit] {
   vertical-align: middle;
   letter-spacing: 1px;
   color: #FFFFFF;
+  border: none;
 }
 
 input[type="submit"]:hover, input[type="submit"]:focus {
